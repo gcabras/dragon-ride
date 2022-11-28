@@ -1,0 +1,6 @@
+<h1>Claim <%= @dragon.name %></h1>
+<%= simple_form_for([@dragon, @dragon_riding]) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit value: "Claim!" %>
+<% end %>
