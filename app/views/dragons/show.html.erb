@@ -1,4 +1,11 @@
 <h1><%= @dragon.name %></h1>
 <h3>Current dragon rider: <%= @dragon.user.name %></h3>
 
-<%= link_to "Claim #{@dragon.name}", new_dragon_dragon_riding_path(@dragon) %>
+<% if policy(@dragon).edit? %>
+  <%= link_to "Edit #{@dragon.name} details", edit_dragon_path(@dragon) %>
+<% end %>
+<% if policy(@dragon).edit? %>
+  <%= link_to "Put #{@dragon.name} back in Dragon Pit", dragon_path(@dragon),
+    data: { turbo_method: :delete, turbo_confirm: "Do you wanna move #{@dragon.name} in the Dragon Pit?"} %>
+<% end %>
+<%= link_to "Claim #{@dragon.name}", new_dragon_claim_path(@dragon) %>

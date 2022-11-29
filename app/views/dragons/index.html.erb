@@ -1,8 +1,12 @@
 <h1>Claim your Dragon!</h1>
 <ul>
+  <% unless @dragons.empty? %>
   <% @dragons.each do |dragon| %>
-    <li><%= link_to dragon.name, dragon_path(@dragon) %>
+    <li><%= link_to dragon.name, dragon_path(dragon) %></li>
+  <% end %>
   <% end %>
 </ul>
 
-<%= link_to "Add a Dragon", new_dragon_path %>
+<%= link_to "Add a Dragon", new_dragon_path if policy(Dragon).new? %>
+
+<%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete } %>
