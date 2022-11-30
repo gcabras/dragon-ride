@@ -3,6 +3,12 @@ class DragonsController < ApplicationController
 
   def index
     @dragons = policy_scope(Dragon)
+    @markers = @dragons.geocoded.map do |dragon|
+      {
+        lat: dragon.latitude,
+        lng: dragon.longitude
+      }
+    end
   end
 
   def show
@@ -56,6 +62,6 @@ class DragonsController < ApplicationController
   end
 
   def dragon_params
-    params.require(:dragon).permit(:name, :address)
+    params.require(:dragon).permit(:name, :address, photos: [])
   end
 end
