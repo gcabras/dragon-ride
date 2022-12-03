@@ -3,17 +3,11 @@ class DragonsController < ApplicationController
 
   def index
     @dragons = policy_scope(Dragon)
-    # if params[:name].present?
-    #   @dragons = Dragon.where(name: params[:name])
-    # else
-    #   @dragons
-    # end
-    @markers = @dragons.geocoded.map do |dragon|
+    @markers = @dragons.map do |dragon|
       {
-        lat: dragon.latitude,
-        lng: dragon.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { dragon: dragon }),
-        image_url: helpers.asset_url("dragon.jpg")
+        lat: dragon.location.latitude,
+        lng: dragon.location.longitude,
+        image_url: helpers.asset_path("dragon.png")
       }
     end
   end
