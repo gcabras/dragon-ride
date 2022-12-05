@@ -1,0 +1,8 @@
+<nav class="navbar-dragon navbar-expand-md navbar-dark">
+  <%= link_to dragons_path do %>
+    <span class="nav-brand">Dragon Pit</span><%= image_tag "dragon_gold.png", height: 35 %>
+  <% end %>
+  <% if current_user.avatar.present? %>
+    <%= cl_image_tag current_user.avatar.key %>
+  <% end %>
+</nav>

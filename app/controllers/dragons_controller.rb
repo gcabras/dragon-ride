@@ -63,6 +63,6 @@ class DragonsController < ApplicationController
   end
 
   def dragon_params
-    params.require(:dragon).permit(:name, :address, photos: [])
+    params.require(:dragon).permit(:name, :location_id, photos: [])
   end
 end

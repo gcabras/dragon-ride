@@ -1,12 +1,14 @@
-.navbar-lewagon {
+.navbar-dragon {
+  background-color: $black;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 16px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-brand {
+  color: $gold;
+  font-family: $headers-font;
 }
