@@ -1,0 +1,12 @@
+.my-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 500px;
+  color: $gold;
+  padding: 8px;
+  justify-content: center;
+  text-decoration: none;
+  a {
+    color: $gold;
+  }
+}
