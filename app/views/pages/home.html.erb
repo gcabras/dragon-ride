@@ -1,6 +1,11 @@
-<div class="body-home">
-<h1 class="home-title">Dragon Ride</h1>
-<h3 class="home-subtitle">An app of Fire and Blood</h3>
-
-<%= link_to "Go to the Dragon Pit", dragons_path %>
+<div class="banner-home">
+  <div class="text-home">
+    <h1 class="home-title">Dragon Ride</h1>
+    <h3 class="home-subtitle">An app of Fire and Blood</h3>
+  </div>
+  <div id="button">
+    <%= link_to dragons_path, class: "main-button" do %>
+      <span class="nav-brand">Dragon Pit</span><%= image_tag "dragon_gold.png", height: 35 %>
+    <% end %>
+  </div>
 </div>
